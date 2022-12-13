@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.ProjetoEstudo.crudkafkaapi.model.CommentModel;
 
+//Comentário teste
 @RestController
 public class CommentController {
 	@Autowired
