@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 public class UsuarioListener {
     private final Logger logger = LoggerFactory.getLogger(UsuarioListener.class);
 
-    @KafkaListener(topics = "user_topico", groupId = "CONSUMER_APPLICATION_EXAMPLE_GROUP", containerFactory = "userContainerFactory")
+    @KafkaListener(topics = "Usuario", groupId = "CONSUMER_APPLICATION_EXAMPLE_GROUP", containerFactory = "userContainerFactory")
     public void userListener(UsuarioMessage message) {
-        logger.info("\n User Kafka Listener received value: \n {}", message);
+        logger.info("\n User Kafka Listener received value: \n {}", message.getNomeUsuario());
     }
 }
