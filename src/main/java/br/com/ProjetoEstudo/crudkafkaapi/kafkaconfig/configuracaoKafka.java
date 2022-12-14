@@ -1,5 +1,6 @@
 package br.com.ProjetoEstudo.crudkafkaapi.kafkaconfig;
 
+import br.com.ProjetoEstudo.crudkafkaapi.messages.UsuarioMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -46,7 +47,7 @@ public class configuracaoKafka {
         return factory;
     }
 
-    @Bean(name = "publishingContainerFactory")
+    /*@Bean(name = "publishingContainerFactory")
     public ConcurrentKafkaListenerContainerFactory<Integer, Object> publishingContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<Integer, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
 
@@ -55,5 +56,5 @@ public class configuracaoKafka {
         factory.getContainerProperties().setSyncCommits(true);
 
         return factory;
-    }
+    }*/
 }
