@@ -1,5 +1,6 @@
 package br.com.ProjetoEstudo.crudkafkaapi.kafkaconfig;
 
+import br.com.ProjetoEstudo.crudkafkaapi.messages.ComentarioMessage;
 import br.com.ProjetoEstudo.crudkafkaapi.messages.UsuarioMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
@@ -47,14 +48,14 @@ public class configuracaoKafka {
         return factory;
     }
 
-    /*@Bean(name = "publishingContainerFactory")
-    public ConcurrentKafkaListenerContainerFactory<Integer, Object> publishingContainerFactory() {
+    @Bean(name = "CommentContainerFactory")
+    public ConcurrentKafkaListenerContainerFactory<Integer, Object> CommentContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<Integer, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
 
-        factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(getProps(PublishingMessage.class)));
+        factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(getProps(ComentarioMessage.class)));
         factory.getContainerProperties().setMissingTopicsFatal(false);
         factory.getContainerProperties().setSyncCommits(true);
 
         return factory;
-    }*/
+    }
 }
