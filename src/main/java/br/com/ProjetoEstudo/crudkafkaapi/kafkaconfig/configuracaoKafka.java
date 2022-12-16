@@ -69,17 +69,21 @@ public class configuracaoKafka {
         ConcurrentKafkaListenerContainerFactory<Integer, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
 
         factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(getProps(LikeMessage.class)));
-
-
-    @Bean(name = "PostContainerFactory")
-    public ConcurrentKafkaListenerContainerFactory<Integer, Object> PostContainerFactory(){
-        ConcurrentKafkaListenerContainerFactory<Integer, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
-
-        factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(getProps(PostMessage.class)));
-
         factory.getContainerProperties().setMissingTopicsFatal(false);
         factory.getContainerProperties().setSyncCommits(true);
 
         return factory;
+    }
 
+
+    @Bean(name = "PostContainerFactory")
+    public ConcurrentKafkaListenerContainerFactory<Integer, Object> PostContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<Integer, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
+
+        factory.setConsumerFactory(new DefaultKafkaConsumerFactory<>(getProps(PostMessage.class)));
+        factory.getContainerProperties().setMissingTopicsFatal(false);
+        factory.getContainerProperties().setSyncCommits(true);
+
+        return factory;
+    }
 }
