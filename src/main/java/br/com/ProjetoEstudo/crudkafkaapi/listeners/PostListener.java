@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PostListener {
 
-    private final Logger logger = LoggerFactory.getLogger(ComentarioListener.class);
+    private final Logger logger = LoggerFactory.getLogger(PostListener.class);
 
     @KafkaListener(topics = "Postagem", groupId = "CONSUMER_APPLICATION_EXAMPLE_GROUP", containerFactory = "PostContainerFactory")
     public void PostListener(PostMessage message) {
