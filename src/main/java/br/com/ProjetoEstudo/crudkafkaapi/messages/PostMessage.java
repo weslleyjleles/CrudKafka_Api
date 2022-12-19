@@ -17,7 +17,6 @@ public class PostMessage {
     private String tituloPublicacao;
     private String textoPublicacao;
     private Integer visualisacaoPublicacao;
-    private Integer likePublicacao;
-    private LocalDateTime dataHoraPublicacao = LocalDateTime.now();
+    private LocalDateTime dataHoraPublicacao;
     private String acaoPublicacao;
 }
