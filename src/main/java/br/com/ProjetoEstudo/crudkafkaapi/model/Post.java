@@ -29,6 +29,6 @@ public class Post {
     private String texto;
     @Column(name = "visualisacao_post")
     private Integer visualisacao;
-    @Column(name = "datetime_post")
+    @Column(name = "dateTime_post")
     private LocalDateTime dataHoraPublicacao;
 }
