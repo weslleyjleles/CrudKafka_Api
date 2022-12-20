@@ -69,8 +69,6 @@ public class PostListener {
 
         }
 
-
-
         if (message.getAcaoPublicacao().equals("deletar") && message.getIdPublicacao() != null){
             repository.deleteById(message.getIdPublicacao());
             System.out.println("Post deleted succesfully id: " + message.getIdPublicacao());
