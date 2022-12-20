@@ -49,12 +49,16 @@ public class ComentarioListener {
 
 			}else {
 				throw new RuntimeException("Post is not found");
+				
 			} 
+			repository.save(comment);
 		}
+		
 		
 		if (message.getAcaoComment().equals("deletar") && message.getIdComment() !=null){
 			repository.deleteById(message.getIdComment());
 			System.out.println("Comment deleted succesfully");
+			
 		}
 
 	}
