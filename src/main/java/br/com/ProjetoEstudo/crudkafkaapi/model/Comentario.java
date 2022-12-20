@@ -1,5 +1,7 @@
 package br.com.ProjetoEstudo.crudkafkaapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,7 +32,8 @@ public class Comentario {
 	private Usuario usuario;
 	@Column(name = "texto_comment")
 	private String texto;
-	@OneToOne 
+	@JsonIgnore
+	@ManyToOne
 	@JoinColumn(name = "fk_id_post", referencedColumnName = "id_post")
 	private Post post;
 	

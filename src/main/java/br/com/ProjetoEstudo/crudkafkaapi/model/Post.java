@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -29,6 +30,12 @@ public class Post {
     private String texto;
     @Column(name = "visualisacao_post")
     private Integer visualisacao;
-    @Column(name = "dateTime_post")
+    @Column(name = "date_time_post")
     private LocalDateTime dataHoraPublicacao;
+    @OneToMany(mappedBy = "post" )
+    private List<Comentario> comentarios;
+    
+    
+   
+    
 }
